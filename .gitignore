@@ -16,7 +16,3 @@ xcuserdata
 # svn & cvs
 .svn
 CVS
-
-_notes/*
-dev.html
-dev.php
