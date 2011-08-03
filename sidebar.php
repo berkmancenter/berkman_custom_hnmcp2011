@@ -5,15 +5,16 @@
 
 $relatedToProjects = get_page_by_title( 'Projects & Clients' );
 $releatedToProjectsID = $relatedToProjects->ID;
+$primaryURL = get_bloginfo('siteurl');
 
-if (is_tree($releatedToProjectsID) || is_tax( 'project_type' )  || is_tax('semester') || 'project' == get_post_type()) {
+if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 'project_type' )  || is_tax('semester') || 'project' == get_post_type()) {
 		
 	echo '<h3>Project &amp; Client Archive</h3>';
 	
 	echo '
 	<h4>Client List:</h4>
 	<ul><li>
-	<a href="/projects/">Alphabetically</a>
+	<a href="'.$primaryURL.'/projects/">Alphabetically</a>
 	</li></ul>';
 	
 	
@@ -30,7 +31,7 @@ if (is_tree($releatedToProjectsID) || is_tax( 'project_type' )  || is_tax('semes
 	foreach ($semesterList as $semester) : 
 	$myName = $semester->name;
 	$myLink = $semester->slug;
-    echo '<li><a href="/semester/'.$myLink.'">'.$myName.'</a></li>';
+    echo '<li><a href="'.$primaryURL.'/semester/'.$myLink.'">'.$myName.'</a></li>';
 	endforeach;
 	echo '</ul>';
 	
@@ -48,7 +49,7 @@ if (is_tree($releatedToProjectsID) || is_tax( 'project_type' )  || is_tax('semes
 	foreach ($projectTypeList as $type) : 
 	$myName = $type->name;
 	$myLink = $type->slug;
-    echo '<li><a href="/project-type/'.$myLink.'">'.$myName.'</a></li>';
+    echo '<li><a href="'.$primaryURL.'/project-type/'.$myLink.'">'.$myName.'</a></li>'; //fix this link to point to generic version of link
 	endforeach;
 	echo '</ul>';
 

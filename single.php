@@ -7,6 +7,7 @@ if (have_posts()) : ?>
 			<h1><span><?php the_title(); ?></span></h1>
 
 			<?php the_content(); ?>
+            <?php if (('open' == $post-> comment_status)) { comments_template(); } ?>
 		<?php endwhile; ?>
 
 	<?php else : ?>
