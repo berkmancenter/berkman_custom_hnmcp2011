@@ -168,15 +168,6 @@ $sidebarProjectInfo = get_page_by_title( 'sidebar - Projects' );
 } 
 
 
-//test to see boolean values
-$relatedToProjects = get_page_by_title( 'Projects & Clients' );
-$releatedToProjectsID = $relatedToProjects->ID;
-
-if (is_tree($releatedToProjectsID)){echo 'is_tree returns TRUE';}
-if (is_tax( 'project_type' )){echo 'is_tax project_type returns TRUE';}
-if (is_tax('semester')){echo 'is_tax semester returns TRUE';}
-if ('project' == get_post_type()){echo 'test to see if is a project post type returns TRUE';}
-
 ?>
 
         
