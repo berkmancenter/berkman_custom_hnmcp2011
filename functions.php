@@ -416,6 +416,13 @@ function save_details(){
   update_post_meta($post->ID, "member_rank", $_POST["member_rank"]);
 }
 
+// Changing excerpt more
+   function new_excerpt_more($more) {
+   global $post;
+   return '… <a href="'. get_permalink($post->ID) . '">' . 'Continue Reading &raquo;' . '</a>';
+   }
+   add_filter('excerpt_more', 'new_excerpt_more');
+
 
 
 

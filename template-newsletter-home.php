@@ -44,15 +44,8 @@ Template Name: Current Newsletter
 			foreach ( $currentProjectsList as $post) :  
 				setup_postdata($post);
 				$more = 0;
-	
-		get_template_part('newsletter_archive_format');
- endforeach; ?>
-
-    
-    
-    
-    
-    
+				get_template_part('newsletter_archive_format');
+			endforeach; ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

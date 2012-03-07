@@ -11,7 +11,7 @@ if (have_posts()) : ?>
 			foreach ($theSemesters as $semester): $mySemester = $semester->name; endforeach;
 			$projectTypes = get_the_terms( $post->ID , 'project_type' );
 		?>
-			<h1><span><?php the_title(); ?></span>
+			<h1><span><a href="<?php echo $clientURL; ?>" target="_blank"><?php the_title(); ?></a></span>
             <?php if ($clientURL) { ?>
             	<a href="<?php echo $clientURL; ?>" target="_blank">
                 	<img src="<?php echo dirname(get_bloginfo('stylesheet_url')).'/images/new_window_icon.gif' ; ?>" width="20" height="15" alt="visit <?php the_title(); ?> website" class="open_new_window" />

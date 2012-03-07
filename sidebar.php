@@ -1,6 +1,23 @@
       </div><!-- end of main content block -->
       <div id="sidebar"> 
         
+<?php if (is_page(30) || get_post_type() == 'faculty_staff'): 
+		$args = array(
+					'post_type' => 'faculty_staff',
+					'order' => 'ASC',
+					'post_per_page' => '-1'
+					);
+			$teamList = get_posts( $args );	
+			echo '<h4>Our Team:</h4>';
+			echo '<ul>';
+			
+			foreach ($teamList as $post) : ?>
+			<li><a href="<?php the_permalink();?>"><?php the_title(); ?></a></li>
+			
+            <?php endforeach; ?>
+			</ul>
+	<?php endif; ?>
+
 <?php 
 
 $relatedToProjects = get_page_by_title( 'Projects & Clients' );
@@ -17,43 +34,46 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
 	<a href="'.$primaryURL.'/projects/">Alphabetically</a>
 	</li></ul>';
 	
-	
-		$taxArgs = array(
-			'taxonomy' => 'semester',
-			'orderby' => 'slug',
-			'order' => 'DESC'
-			);
-	$semesterList = get_categories( $taxArgs );
-	
-	echo '<h4>See Projects By Semester:</h4>';
-	echo '<ul>';
-	
-	foreach ($semesterList as $semester) : 
-	$myName = $semester->name;
-	$myLink = $semester->slug;
-    echo '<li><a href="'.$primaryURL.'/semester/'.$myLink.'">'.$myName.'</a></li>';
-	endforeach;
-	echo '</ul>';
-	
-	
+	echo '<h4>See Projects By Semester:</h4>';  
+				$semList = get_terms( 'semester', 
+				array(
+				'orderby'    => 'name',
+				'order' => 'DESC',
+				) );	
+				?>	                
+          
+                    
+                 <form action="<?php bloginfo('stylesheet_directory'); ?>/jump.php" method="post"> 
+                    <select name=url> 
+						<?php   
+                        foreach ($semList as $semester) { ?>
+                        <option value="<?php echo '/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?></option> 			
+                        <?php } ?>	                   
+                     </select> 
+                    <input type="submit" value="Submit"> 
+                </form>
+                
+                
+<?php 
 	$typeArgs = array(
 			'taxonomy' => 'project_type',
 			'orderby' => 'slug',
-			'order' => 'ASC'
+			'order' => 'DESC'
 			);
-	$projectTypeList = get_categories( $typeArgs );
+	$projectTypeList = get_categories( $typeArgs );	
+	echo '<h4>See Projects By Type:</h4>'; ?>
 	
-	echo '<h4>See Projects By Type:</h4>';
-	echo '<ul>';
-	
-	foreach ($projectTypeList as $type) : 
-	$myName = $type->name;
-	$myLink = $type->slug;
-    echo '<li><a href="'.$primaryURL.'/project-type/'.$myLink.'">'.$myName.'</a></li>'; //fix this link to point to generic version of link
-	endforeach;
-	echo '</ul>';
+	 <form action="<?php bloginfo('stylesheet_directory'); ?>/jump.php" method="post"> 
+                    <select name=url> 
+						<?php   
+                        foreach ($projectTypeList as $ProjType) { ?>
+                        <option value="<?php echo '/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option> 			
+                        <?php } ?>	                   
+                     </select> 
+                    <input type="submit" value="Submit"> 
+                </form>
 
-$sidebarProjectInfo = get_page_by_title( 'sidebar - Projects' );
+<?php $sidebarProjectInfo = get_page_by_title( 'sidebar - Projects' );
 	setup_postdata($sidebarProjectInfo);
 	echo '<h3>Becoming a Client</h3>';
 	the_content();
@@ -71,7 +91,8 @@ $sidebarProjectInfo = get_page_by_title( 'sidebar - Projects' );
 
 
 	$args = array (
-		'show_post_count'=>true
+		'show_post_count'=>true,
+		'type' => 'yearly',
 	);
 	echo '<ul>';
 	wp_get_archives( $args );
@@ -133,7 +154,6 @@ $sidebarProjectInfo = get_page_by_title( 'sidebar - Projects' );
 			'order' => 'DESC'
 			);
 	$newsletterArchive = get_categories( $typeArgs );
-	
 	//if (count($newsletterArchive) > 1){
 	echo '<h3>Newsletter Archive</h3>';
 	echo '<ul>';
@@ -142,7 +162,8 @@ $sidebarProjectInfo = get_page_by_title( 'sidebar - Projects' );
 		if($pastIssue != $currentIssue){
 			$myName = $pastIssue->name;
 			$myLink = $pastIssue->slug;
-			echo '<li><a href="/issues/'.$myLink.'">'.$myName.'</a></li>';
+			
+			echo '<li><a href="'.get_bloginfo('siteurl').'/issues/'.$myLink.'">'.$myName.'</a></li>';
 		}
 	endforeach;
 	echo '</ul>';

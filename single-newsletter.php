@@ -14,7 +14,7 @@ if (have_posts()) :
 			<h1><span><?php the_title(); ?></span></h1>
 			<div class="posted_date"><span>posted: </span><?php echo get_the_date( 'F jS, Y'); ?></div>
 			<?php the_content(); ?>
-            <p class="back_to_TOC"><a href="/issues/<?php echo $displayNewsletterSlug ?>">&laquo; back to the <?php echo $displayNewsletter; ?> Table of Contents</a></p>
+            <p class="back_to_TOC"><a href="<?php get_bloginfo('siteurl')?>/issues/<?php echo $displayNewsletterSlug ?>">&laquo; back to the <?php echo $displayNewsletter; ?> Table of Contents</a></p>
 		<?php endwhile; ?>
 
 	<?php else : ?>

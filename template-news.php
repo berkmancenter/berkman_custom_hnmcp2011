@@ -9,7 +9,7 @@ Template Name: News Home Page
 if (have_posts()) : ?>
 	
 		<?php while (have_posts()) : the_post(); ?>
-			<h1><span><?php the_title(); ?></span></h1>
+			<h1><span><?php echo get_the_title(); ?></span></h1>
 
 			<?php the_content(); ?>
             

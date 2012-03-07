@@ -34,7 +34,7 @@
                         	<a href="<?php echo get_permalink(); ?>">
 							<?php if (has_post_thumbnail()) { the_post_thumbnail('featured_on_home'); } ?>
                             </a>
-                            <div class="read_feature">read article &raquo;</div>
+                            <div class="read_feature"><a href="<?php echo get_permalink(); ?>">read article &raquo;</a></div>
 	    				</div>
 					<?php 
 					$counter += 1 ;
