@@ -1,7 +1,7 @@
       </div><!-- end of main content block -->
       <div id="sidebar"> 
         
-<?php if (is_page(30) || get_post_type() == 'faculty_staff'): 
+<?php if (is_page(30) || get_post_type() == 'faculty_staff' || is_page(766) ): 
 		$args = array(
 					'post_type' => 'faculty_staff',
 					'order' => 'ASC',
@@ -47,7 +47,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
                     <select name=url> 
 						<?php   
                         foreach ($semList as $semester) { ?>
-                        <option value="<?php echo '/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?></option> 			
+                        <option value="<?php echo network_home_url().'/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?></option> 			
                         <?php } ?>	                   
                      </select> 
                     <input type="submit" value="Submit"> 
@@ -67,7 +67,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
                     <select name=url> 
 						<?php   
                         foreach ($projectTypeList as $ProjType) { ?>
-                        <option value="<?php echo '/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option> 			
+                        <option value="<?php echo network_home_url().'/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option> 			
                         <?php } ?>	                   
                      </select> 
                     <input type="submit" value="Submit"> 
@@ -163,7 +163,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
 			$myName = $pastIssue->name;
 			$myLink = $pastIssue->slug;
 			
-			echo '<li><a href="'.get_bloginfo('siteurl').'/issues/'.$myLink.'">'.$myName.'</a></li>';
+			echo '<li><a href="'.network_home_url().'/issues/'.$myLink.'">'.$myName.'</a></li>';
 		}
 	endforeach;
 	echo '</ul>';
