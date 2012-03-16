@@ -47,7 +47,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
                     <select name=url> 
 						<?php   
                         foreach ($semList as $semester) { ?>
-                        <option value="<?php echo network_home_url().'/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?></option> 			
+                        <option value="<?php echo $primaryURL.'/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?></option> 			
                         <?php } ?>	                   
                      </select> 
                     <input type="submit" value="Submit"> 
@@ -67,7 +67,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
                     <select name=url> 
 						<?php   
                         foreach ($projectTypeList as $ProjType) { ?>
-                        <option value="<?php echo network_home_url().'/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option> 			
+                        <option value="<?php echo $primaryURL.'/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option> 			
                         <?php } ?>	                   
                      </select> 
                     <input type="submit" value="Submit"> 
@@ -163,7 +163,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
 			$myName = $pastIssue->name;
 			$myLink = $pastIssue->slug;
 			
-			echo '<li><a href="'.network_home_url().'/issues/'.$myLink.'">'.$myName.'</a></li>';
+			echo '<li><a href="'.$primaryURL.'/issues/'.$myLink.'">'.$myName.'</a></li>';
 		}
 	endforeach;
 	echo '</ul>';
