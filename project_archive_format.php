@@ -1,4 +1,5 @@
-<?php 			$listTypes = get_the_terms( $post->ID , 'project_type' );
+<?php 			
+				$listTypes = get_the_terms( $post->ID , 'project_type' );
 				$lastTerm = end($listTypes);
 				$students = get_post_meta($post->ID, 'project_students', true);
 				$theSemesters = get_the_terms( $post->ID , 'semester' );
@@ -17,7 +18,9 @@
 					};  
 				} ?></div>
         <div class="project_listing_detail"><strong>Students: </strong><?php echo $students; ?></div>
+       
         <?php the_excerpt(); ?>
     </div>
     <div class="endFloat"></div>
 </div>
+<?php wp_reset_query(); ?>

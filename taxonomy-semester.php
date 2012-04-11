@@ -7,8 +7,8 @@ if (have_posts()) : ?>
 	<?php 
 	// the following line of code returns the taxonomy's name for this archive
 	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); echo $term->name; ?>
-    </h1><?php
-	
+    </h1>
+	<?php
 	$mySemesterName = $term->name; 
 	$mySemesterID = $term->term_id;
 	$thisPostID = $post->ID;?>
@@ -29,6 +29,7 @@ if (have_posts()) : ?>
         	
 			if ($allProjectsBySem) :?>
             <?php foreach ($allProjectsBySem as $post) : ?> 
+            <?php setup_postdata($post); ?>
 			<?php get_template_part('project_archive_format'); ?>
             <?php endforeach;?>
            <?php endif; ?>

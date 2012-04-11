@@ -12,7 +12,6 @@ if (have_posts()) : ?>
 	$mySemesterName = $term->name; 
 	$mySemesterID = $term->term_id;
 	$thisPostID = $post->ID;?>
-
     
       <?php wp_reset_query(); 
         $args = array (
@@ -30,15 +29,11 @@ if (have_posts()) : ?>
         	
 			if ($allProjectsBySem) :?>
             <?php foreach ($allProjectsBySem as $post) : ?> 
+            <?php setup_postdata($post); ?>
 			<?php get_template_part('project_archive_format'); ?>
             <?php endforeach;?>
            <?php endif; ?>
            
-		<?php /*while (have_posts()) : the_post(); 
-		
-			get_template_part('project_archive_format');
-			
-		 endwhile;*/ ?>
 
 	<?php else : ?>
 		<h2 class="center">Not Found</h2>
