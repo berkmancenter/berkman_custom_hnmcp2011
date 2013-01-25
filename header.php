@@ -7,7 +7,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="<?php echo dirname(get_bloginfo('stylesheet_url')).'/images/favicon.ico' ?>">
 <?php
 if (is_front_page()) {
-	 	wp_enqueue_script('jquery'); 
 		wp_enqueue_script('jquery-ui-core');
 		wp_enqueue_script('jquery-ui-tabs');
 }?>
