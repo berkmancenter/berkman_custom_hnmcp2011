@@ -69,6 +69,14 @@ body {
 	margin-bottom: 0px;
 	margin-left: -2000px;
 }
+#logo p {
+	text-align: right;
+	padding-right: 30px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 18px;
+	margin-top: 10px;
+	color: #333;
+}
 .floatbox-980 {
 	width: 980px;
 	margin-right: auto;
@@ -334,6 +342,7 @@ body {
 	background-image: url(images/thumb-holder.gif);
 	background-repeat: no-repeat;
 	background-position: center center;
+	text-align: center;
 }
 .project_listing_detail {
 	font-size: 14px;
