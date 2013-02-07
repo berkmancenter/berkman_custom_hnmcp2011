@@ -520,3 +520,15 @@ body {
 .comment-author {
 	font-size: 16px;
 }
+.logo-plcmnt {
+	float: left;
+}
+img {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#logo a {
+	float: left;
+}
