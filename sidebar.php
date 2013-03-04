@@ -5,6 +5,8 @@
 		wp_reset_query();
 		$args = array(
 					'post_type' => 'faculty_staff',
+					'meta_key' => 'member_rank',
+					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'numberposts' => '-1'
 					);
