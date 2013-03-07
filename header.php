@@ -37,7 +37,7 @@ $("#featured").tabs("rotate",5000,true);
     <div id="header">
       <div id="logo">
         <h3>Harvard Negotiation &amp; Mediation Clinical Program</h3>
-        <a href="<?php echo site_url(); ?>"><img src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/shim.gif" width="170" height="130" alt="HNMCP home page" class="logo-plcmnt" /></a>
+        <a href="<?php echo site_url(); ?>"><img src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/shim.gif" width="980" height="134" alt="HNMCP home page" class="logo-plcmnt" /></a>
         <p>at Harvard Law School</p>
       </div>
     </div>

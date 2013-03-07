@@ -62,6 +62,7 @@ body {
 }
 
 #logo {
+	position: relative;
 }
 #logo h3 {
 	margin-top: 0px;
@@ -158,14 +159,16 @@ body {
 }
 #nav {
 	height: 40px;
+	width: 980px;
 }
 #nav ul {
 	list-style-type: none;
-	margin: 0%;
+	margin: 0px;
 	padding: 0px;
 	float: left;
 	position: relative;
 	left: 50%;
+	height: 40px;
 }
 #nav ul li {
 	float: left;
@@ -522,6 +525,10 @@ body {
 }
 .logo-plcmnt {
 	float: left;
+	position: absolute;
+	z-index: 5;
+	left: 0px;
+	top: 0px;
 }
 img {
 	border-top-style: none;
