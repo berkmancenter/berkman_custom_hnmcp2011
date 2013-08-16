@@ -44,6 +44,11 @@ $("#featured").tabs("rotate",5000,true);
     <!-- end of header -->
     <div id="nav">
       <?php wp_nav_menu( array( 'menu' => 'Primary Menu' ) ); ?>
+	   <div class="search">
+		   <form action="<?php echo site_url(); ?>">
+			   <input type="text" size="20" name="s" id="search-input" /><input type="submit" value="Search" id="search-submit" />
+		   </form>
+	   </div>
     </div><!-- end of nav -->
     <div id="page_content">
       <div id="main-content-block"> 

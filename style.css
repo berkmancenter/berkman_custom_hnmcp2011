@@ -160,20 +160,42 @@ body {
 #nav {
 	height: 40px;
 	width: 980px;
+	overflow:auto;
 }
+
+#nav .menu {
+	float:left;
+	width:650px;
+}
+
+#nav .search {
+	float:right;
+	width:275px;
+	padding-top:8px;
+}
+
+#nav .search input#search-input {
+	width:195px;
+	border:1px solid #dfdfdf;
+	padding:2px;
+	margin-right:5px;
+}
+
+#nav .search input#search-submit {
+	border:1px solid #dfdfdf;
+	padding:1px 2px;
+	cursor:pointer;
+}
+
 #nav ul {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
-	float: left;
 	position: relative;
-	left: 50%;
 	height: 40px;
 }
 #nav ul li {
 	float: left;
-	position: relative;
-	right: 50%;
 }
 #nav ul li a {
 	display: block;
