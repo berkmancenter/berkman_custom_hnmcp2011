@@ -16,21 +16,26 @@ if (is_front_page()) { ?>
 <script type="text/javascript">
  jQuery(document).ready(function($) {
 
-$("#featured").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true);  
-$("#featured").hover(  
-function() {  
-$("#featured").tabs("rotate",0,true);  
-},  
-function() {  
-$("#featured").tabs("rotate",5000,true);  
-}  
-);  
+	$("#featured").tabs({fx:{opacity: "toggle"}}).tabs("hnmcp_rotate", 5000, true );
 
+	$("#featured").hover(
+		function() { jQuery("#featured").tabs("hnmcp_rotate",0,true); },
+		function() { jQuery("#featured").tabs("hnmcp_rotate",5000,true); }
+	);
+
+	$('.ui-tabs-nav-item').click(function(){
+		if( ! jQuery(this).hasClass( 'ui-tabs-selected' ) )
+		{
+			$( '.ui-tabs-selected').removeClass( 'ui-tabs-selected' );
+			jQuery(this).addClass( 'ui-tabs-selected' );
+		}
+	});
 });
+
 </script>
 <?php } ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <div id="wrapper-html">
 
   <div id="wrapper-page" class="floatbox-980">

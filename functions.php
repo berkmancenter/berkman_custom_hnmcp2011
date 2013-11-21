@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+require_once( 'tbd_functions.php' );
+
 add_action( 'init', 'register_my_menus' );
 
 function register_my_menus() {

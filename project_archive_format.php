@@ -1,6 +1,6 @@
 <?php 			
 				$listTypes = get_the_terms( $post->ID , 'project_type' );
-				$lastTerm = end($listTypes);
+				$lastTerm = @end($listTypes); // sometimes $listTypes is false (no terms), @ surpresses the errors
 				$students = get_post_meta($post->ID, 'project_students', true);
 				$theSemesters = get_the_terms( $post->ID , 'semester' );
 				foreach ($theSemesters as $semester): $mySemester = $semester->name; endforeach; ?>

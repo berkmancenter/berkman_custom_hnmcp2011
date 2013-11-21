@@ -8,11 +8,6 @@ if (have_posts()) : ?>
 			<h1><span><?php the_title(); ?></span></h1>
 
 
-
-
-
-
-
 			<?php the_content(); ?>
 		<?php endwhile; ?>
 

@@ -6,9 +6,9 @@
 		$args = array(
 					'post_type' => 'faculty_staff',
 					'meta_key' => 'member_rank',
-					'orderby' => 'meta_value',
+					'orderby' => 'meta_value_num',
 					'order' => 'ASC',
-					'numberposts' => '-1'
+					'posts_per_page' => '-1'
 					);
 			$teamList = get_posts( $args );	
 			echo '<h4>Our Team:</h4>';
@@ -30,7 +30,7 @@ $primaryURL = get_bloginfo('siteurl');
 if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 'project_type' )  || is_tax('semester') || 'project' == get_post_type()) {
 		
 	echo '<h3>Project &amp; Client Archive</h3>';
-	
+	//printf( '<pre>%s</pre>', print_r( $wp_query, 1 ) );
 	echo '
 	<h4>Client List:</h4>
 	<ul><li>
@@ -50,7 +50,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
                     <select name=url> 
 						<?php   
                         foreach ($semList as $semester) { ?>
-                        <option value="<?php echo get_bloginfo('url').'/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?></option> 			
+                        <option <?php if( $semester->slug == get_query_var( 'semester' ) ) echo ' selected="selected"'; ?> value="<?php echo get_bloginfo('url').'/semester/'.$semester->slug;?>"><?php echo $semester->name ; ?><?php //printf( ' -- %s, %s', $semester->slug, get_query_var( 'semester' ) ); ?></option>
                         <?php } ?>	                   
                      </select> 
                     <input type="submit" value="Submit"> 
@@ -70,7 +70,7 @@ if (is_page(array('projects-clients', 'becoming-a-client-of-hnmcp')) || is_tax( 
                     <select name=url> 
 						<?php   
                         foreach ($projectTypeList as $ProjType) { ?>
-                        <option value="<?php echo get_bloginfo('url').'/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option> 			
+                        <option  <?php if( $ProjType->slug == get_query_var( 'project_type' ) ) echo ' selected="selected"'; ?>  value="<?php echo get_bloginfo('url').'/project-type/'.$ProjType->slug;?>"><?php echo $ProjType->name ; ?></option>
                         <?php } ?>	                   
                      </select> 
                     <input type="submit" value="Submit"> 

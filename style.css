@@ -160,7 +160,7 @@ body {
 #nav {
 	height: 40px;
 	width: 980px;
-	overflow:auto;
+	overflow:hidden;
 }
 
 #nav .menu {
@@ -211,6 +211,7 @@ body {
 	border-right-width: 2px;
 	border-right-style: groove;
 	border-right-color: #B11034;
+	overflow:hidden;
 }
 #nav ul li.first a{	
 	border-left-width: 2px;
@@ -405,7 +406,7 @@ body {
 	margin-top: 25px;
 }
 #featured ul.ui-tabs-nav{
-	top:5px;
+	/*top:5px;*/
 	left:4px;
 	list-style:none;
 	padding:0;
@@ -424,6 +425,7 @@ body {
 #featured li.ui-tabs-nav-item a{
 	display:block;
 	height:55px;
+	overflow:hidden;
 	color:#666;
 	margin-right: 17px;
 	padding: 3px;
@@ -560,4 +562,186 @@ img {
 }
 #logo a {
 	float: left;
+}
+
+
+body.home #main-content-block
+{
+	padding: 0 0 20px;
+	width:640px;
+	margin:0 0px 0 30px;
+}
+
+#home-slideshow
+{
+	height:286px;
+	width:640px;
+	overflow:hidden;
+	position:relative;
+	box-shadow:#000000 0 0 5px;
+	border:1px solid white;
+}
+
+#home-slideshow a.nav
+{
+	top:100px;
+	padding:10px;
+	color:white;
+	background-color:rgba(145,1,44,.7);
+	font-size:2.8em;
+	z-index:10;
+	position:absolute;
+	font-weight:normal;
+}
+
+#home-slideshow a.nav:hover
+{
+	text-decoration: none;
+}
+
+#home-slideshow a.prev
+{
+	left:-1px;
+}
+
+#home-slideshow a.next
+{
+	right:-1px;
+}
+
+#home-slideshow ul
+{
+	height:286px;
+	width:640px;
+	background-color:#fcfcfc;
+	position:relative;
+	overflow:hidden;
+	padding-left:0;
+	z-index:5;
+	margin:0;
+}
+
+#home-slideshow li
+{
+	height:286px;
+	width:600px;
+	position:relative;
+}
+
+#home-slideshow li h3
+{
+	position:absolute;
+	bottom:0;
+	left:0;
+	padding:10px;
+	background-color:rgba(145,1,44,.92);
+	color:white;
+	width:620px;
+	margin:0;
+	font-weight:normal;
+	border-top:1px solid white;
+}
+
+#home-slideshow li h3 a
+{
+    color:#dfdfdf;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+#home-slideshow li h3 a:hover
+{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+.home-page-post
+{
+	border-bottom:1px solid #dfdfdf;
+	margin-bottom:10px;
+	padding: 10px 10px 20px;
+}
+
+.home-page-post:last-child
+{
+	margin-bottom:0;
+	padding-bottom:0;
+	border-bottom:none;
+}
+
+
+#featured
+{
+	margin-left:1px;
+	height:250px;
+	overflow:visible;
+}
+
+#featured ul
+{
+
+}
+
+.ui-tabs-anchor
+{
+	overflow:hidden;
+	padding-left:10px!important;
+}
+
+
+/**/
+
+
+#updateHolder {
+	background-color: transparent;
+	width: 220px;  /* <= For Width: change the width value */
+	color: #333;
+	margin-top: 4px;
+	overflow-x: hidden;
+	float:left;
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+#updateContainer {
+	background-color: transparent;
+	position: relative;
+	cursor: pointer;
+	overflow:hidden;
+}
+
+#updateContent {
+	/*width: 100%;
+	background: #F2F4F8;
+	position: absolute;*/
+}
+
+#updateScollBar {
+	background: none;
+	position: absolute;
+	width: 10px;
+	left: 2px;
+	bottom: 0;
+	cursor: default;
+	z-index:100;
+}
+
+#updateScollScrubber {
+	display: none;
+	background-color: #95012D;
+	zoom: 1;
+	filter: alpha(opacity=40); /* For IE8 and earlier */
+	opacity: 0.8;
+	width: 8px;
+	height: 100px;
+	-moz-border-radius: 7px; /* Firefox */
+	-webkit-border-radius: 7px; /* Safari, Chrome */
+	border-radius: 7px; /* CSS3 */
+	position: absolute;
+}
+
+
+#updateScollBar, #updateContainer, #updateHolder {
+	height: 250px; /* <= For Height: change the height value */
 }

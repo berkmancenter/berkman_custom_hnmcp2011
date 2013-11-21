@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-           <?php if(is_front_page()){ 
+           <?php if(is_front_page()){
 		   wp_reset_query();
 				$args = array(
 					'post_type' => array('post', 'project', 'newsletter'),
-					'posts_per_page' => '4',
+					'posts_per_page' => '10',
 					'meta_query' => array(
 										array(
 											'key' => 'home_page_feature_boolean',
@@ -14,7 +14,7 @@
 				$homePagePosts = get_posts($args);
 				if ($homePagePosts) {
 					$counter = 1;
-					echo '<div id="featured" ><ul class="ui-tabs-nav">';
+					echo '<div id="featured" ><div id="updateHolder"><div id="updateContainer"><div id="updateScollBar"><div id="updateScollScrubber" style="height: 248.756px; display: none;"></div></div><ul id="updateContent" class="ui-tabs-nav">';
 					foreach ( $homePagePosts as $post) :  
 					setup_postdata($post); ?>
 
@@ -22,10 +22,12 @@
                         <a href="#fragment-<?php echo $counter; ?>"><?php the_title(); ?></a>
                         </li>
 
-					<?php 
+					<?php
 					$counter +=1;
 					endforeach;
 					echo '</ul>';
+					echo '</div><!-- end of updateContainer -->';
+					echo '</div><!-- end of updateHolder -->';
 					rewind_posts();
 					$counter = 1;
 					foreach ( $homePagePosts as $post) :  
@@ -36,15 +38,17 @@
                             </a>
                             <div class="read_feature"><a href="<?php echo get_permalink(); ?>">read article &raquo;</a></div>
 	    				</div>
-					<?php 
+					<?php
 					$counter += 1 ;
 					endforeach;
 					echo '</div><!-- end of featured -->';
 				wp_reset_query();
 				}
 				
-			 } ?>  
+			 } ?>
 
+
+<?php //if( is_home() || is_front_page() ) { TBD_HNMCP::get_template_part( 'home', 'slideshow' ); } ?>
 
 <?php wp_reset_query();
 if (! is_front_page()) :
