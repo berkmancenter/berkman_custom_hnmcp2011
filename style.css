@@ -160,7 +160,7 @@ body {
 #nav {
 	height: 40px;
 	width: 980px;
-	overflow:hidden;
+	overflow:visible;
 }
 
 #nav .menu {
@@ -194,8 +194,9 @@ body {
 	position: relative;
 	height: 40px;
 }
-#nav ul li {
+#nav ul > li {
 	float: left;
+	position:relative;
 }
 #nav ul li a {
 	display: block;
@@ -229,6 +230,7 @@ body {
 	position: absolute;
 	left: 0px;
 	top: 40px;
+	height:auto!important;
 	/* [disabled]background-image: url(images/bkg-black-20.png); */
 	border: 1px solid #6D0421;
 }
@@ -237,6 +239,27 @@ body {
 	float: none;
 	/* [disabled]background-image: url(images/bkg-black-20.png); */
 }
+
+#nav .sub-menu
+{
+	padding:0;
+}
+
+#nav .sub-menu li
+{
+	height:auto!important;
+	background-color:#96012D;
+}
+
+#nav .sub-menu li a
+{
+	color:white;
+	background-color:transparent;
+	/*background-image:none;*/
+	border-bottom:none;
+	padding:10px 10px;
+}
+
 #nav ul li ul li a {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
