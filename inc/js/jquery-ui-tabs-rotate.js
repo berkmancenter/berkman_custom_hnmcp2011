@@ -86,4 +86,4 @@ jQuery(function(){
 			self.hnmcp_rotate(1, self.continuing);
 		}
 	});
-})(jQuery);
+});
