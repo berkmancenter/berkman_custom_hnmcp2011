@@ -1,5 +1,5 @@
-jQuery(function(){
-	jQuery.extend( jQuery.ui.tabs.prototype, {
+jQuery(function($){
+	$.extend( $.ui.tabs.prototype, {
 		rotation: null,
 		rotationDelay: null,
 		continuing: null,
@@ -21,8 +21,8 @@ jQuery(function(){
 					var t = o.active;
 					self.option( "active", ++t < self.anchors.length ? t : 0 );
 
-					// remove selected class from current tab, add to new one
-					var __selected = jQuery('.ui-tabs-selected');
+// remove selected class from current tab, add to new one
+					var __selected = $('.ui-tabs-selected');
 
 					__selected.removeClass( 'ui-tabs-selected' );
 					__selected.next().addClass( 'ui-tabs-selected' );
@@ -30,7 +30,7 @@ jQuery(function(){
 					var clone = __selected.clone();
 
 					__selected.slideToggle( 'slow', function(){
-						jQuery('ul#updateContent').append(clone);
+						$('ul#updateContent').append(clone);
 						this.remove();
 					} );
 				}, ms );
