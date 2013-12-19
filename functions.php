@@ -20,8 +20,7 @@ function modify_jquery() {
                 wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
                 wp_enqueue_script('jquery');
                 wp_deregister_script('jquery-ui-core');
-                wp_register_script('jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', fals\
-e, '1.10.3');
+                wp_register_script('jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', false, '1.10.3');
                 wp_enqueue_script('jquery-ui-core');
 			# just need to kick this out so	that it	pulls it in from ui-core
                 wp_deregister_script('jquery-ui-tabs');
