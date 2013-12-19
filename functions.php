@@ -12,6 +12,23 @@ function register_my_menus() {
 	);
 }
 
+//Making jQuery Google API
+function modify_jquery() {
+         if (!is_admin()) {
+	    # force	  theme to use google api version of jquery and jquery-ui
+                wp_deregister_script('jquery');
+                wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
+                wp_enqueue_script('jquery');
+                wp_deregister_script('jquery-ui-core');
+                wp_register_script('jquery-ui-core', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', fals\
+e, '1.10.3');
+                wp_enqueue_script('jquery-ui-core');
+			# just need to kick this out so	that it	pulls it in from ui-core
+                wp_deregister_script('jquery-ui-tabs');
+                }
+}
+add_action('init', 'modify_jquery');
+
 if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 200, true );
