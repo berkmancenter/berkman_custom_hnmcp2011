@@ -22,7 +22,7 @@ Template Name: Current Newsletter
 	$currentIssue = $issueList [0];
 	$displayNewsletter = $currentIssue->name; 
 	$displayNewsletterSlug = $currentIssue->slug;
-	echo '<h1>HNCMP Newsletter - '.$displayNewsletter.'</h1>';    
+	echo '<h1>HNMCP Newsletter - '.$displayNewsletter.'</h1>';    
 	
 	
 
